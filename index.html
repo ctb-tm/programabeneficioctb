@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Benefícios CTB</title>
+    
+    <style>
+        /* Configuração inicial para remover margens padrão */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* 1. Corpo da página externo (fundo azul 15%) */
+        body {
+            background-color: #e8f0f8; /* Tom de Azul 15% (bem claro) */
+            padding: 20px; /* Dá espaço para vermos o fundo */
+        }
+
+        /* 2. Container principal (para centralizar o conteúdo) */
+        .container {
+            max-width: 900px; /* Largura máxima do infográfico */
+            margin: 0 auto; /* Centraliza na página */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Cantos arredondados */
+            overflow: hidden; /* Garante que o rodapé e cabeçalho fiquem nos cantos */
+        }
+
+        /* 3. Cabeçalho (com logomarca) */
+        header {
+            /* O fundo do cabeçalho será o mesmo do box interno (Azul 5%) */
+            background-color: #f7f9fc; /* Tom de Azul 5% (quase branco) */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #d9e6f2; /* Linha divisória leve (azul 15%) */
+        }
+
+        header img {
+            max-width: 180px; /* Tamanho da logomarca (ajuste se necessário) */
+            height: auto;
+        }
+
+        /* 4. Box interno (fundo azul 5%) */
+        .content-box {
+            background-color: #f7f9fc; /* Tom de Azul 5% */
+            padding: 25px 40px; /* Mais espaço nas laterais */
+        }
+
+        /* 5. Título (azul 100%) */
+        h1 {
+            color: #003366; /* Tom de Azul 100% (escuro) */
+            text-align: center;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Estilo dos subtítulos (Objetivo, Público-Alvo, etc.) */
+        h2 {
+            color: #003366; /* Azul 100% */
+            margin-top: 30px;
+            border-left: 4px solid #003366; /* Detalhe visual */
+            padding-left: 10px;
+        }
+
+        /* Estilos das listas */
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilos da Tabela (Apoio Financeiro) */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Remove bordas duplas */
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            border: 1px solid #cddbe8; /* Borda no tom azul 15% */
+            padding: 12px;
+            text-align: left;
+        }
+        
+        /* Cabeçalho da tabela */
+        th {
+            background-color: #e8f0f8; /* Fundo azul 15% */
+            color: #003366; /* Texto azul 100% */
+        }
+        
+        /* Células da tabela */
+        td {
+            background-color: #ffffff; /* Fundo branco para leitura fácil */
+        }
+
+        /* 6. Rodapé (fundo azul 100%, fontes branca) */
+        footer {
+            background-color: #003366; /* Tom de Azul 100% */
+            color: #ffffff; /* Fonte Branca */
+            padding: 25px;
+            text-align: center;
+            margin-top: 0; /* Gruda no box de conteúdo */
+        }
+
+        footer p {
+            margin: 5px 0; /* Espaçamento entre as linhas do rodapé */
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <img src="ctb.png" alt="Logomarca CTB - Clube dos Tenistas da Bahia">
+        </header>
+
+        <main class="content-box">
+
+            <h1>PROGRAMA DE BENEFÍCIOS DO ALUNO CTB</h1>
+
+            <section>
+                <h2>1. Objetivo</h2>
+                <p>Reconhecer o desempenho, assiduidade e o comprometimento dos alunos participantes dos projetos esportivos do Clube dos Tenistas da Bahia, incentivando a permanência e o desenvolvimento técnico dos atletas em formação.</p>
+            </section>
+
+            <section>
+                <h2>2. Público-Alvo</h2>
+                <p>Atletas e alunos de escolas públicas com nível técnico avançado, regularmente inscritos nos projetos sociais e esportivos vinculados ao CTB, em especial os participantes do Projeto Bahia com Tênis de Mesa e demais programas de iniciação.</p>
+            </section>
+
+            <section>
+                <h2>3. Itens do Programa</h2>
+                <p>O programa prevê a entrega de um Kit Benefício CTB e o Apoio Financeiro para Participação em Eventos.</p>
+                
+                <h3>A) Kit Benefício CTB</h3>
+                <p>Cada aluno beneficiado receberá:</p>
+                <ul>
+                    <li>2 Camisas Oficiais de Treinamento CTB (uniforme padrão de identificação do clube e dos parceiros);</li>
+                    <li>Certificado de Atleta do Programa;</li>
+                    <li>Acesso prioritário a clínicas técnicas e eventos internos gratuitamente.</li>
+                </ul>
+
+                <h3>B) Apoio Financeiro para Participação em Eventos</h3>
+                <p>O apoio tem como finalidade custear parcialmente despesas de transporte, alimentação e inscrição de atletas em competições oficiais estadual e nacional).</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Evento</th>
+                            <th>Valor de Apoio por Atleta</th>
+                            <th>Critério de Concessão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estadual</td>
+                            <td>R$ 150,00</td>
+                            <td>Participação confirmada e frequência mínima de 75% nos treinos.</td>
+                        </tr>
+                        <tr>
+                            <td>Nacional</td>
+                            <td>R$ 250,00</td>
+                            <td>Classificação prévia e desempenho técnico destacado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>4. Critérios de Elegibilidade</h2>
+                <p>Para receber os benefícios, o aluno deve:</p>
+                <ul>
+                    <li>Estar matriculado e ativo no projeto esportivo CTB;</li>
+                    <li>Manter frequência mínima de 75% nas aulas e treinos;</li>
+                    <li>Demonstrar disciplina e comportamento esportivo exemplar;</li>
+                    <li>Participar das ações sociais e educativas vinculadas ao projeto;</li>
+                    <li>Ser indicado pelo professor responsável e validado pela coordenação técnica.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Gestão e Prestação de Contas</h2>
+                <p>Os apoios serão geridos pela coordenação do projeto, com registro nominal dos beneficiários e comprovação documental (listas de presença, fotos, recibos e relatórios técnicos).</p>
+                <p>A prestação de contas seguirá o modelo padrão com emissão de recibo assinado.</p>
+            </section>
+
+            <section>
+                <h2>6. Impacto Esperado</h2>
+                <ul>
+                    <li>Redução da evasão esportiva e escolar;</li>
+                    <li>Estímulo à meritocracia e ao bom desempenho;</li>
+                    <li>Formação de atletas cidadãos com valores éticos e sociais;</li>
+                    <li>Aumento da representatividade da Bahia em competições estaduais e nacionais.</li>
+                </ul>
+            </section>
+        
+        </main> <footer>
+            <p><strong>Clube dos Tenistas da Bahia (CTB)</strong></p>
+            <p>Endereço: Rua Exemplo, 123 - Bairro Modelo, Salvador - BA</p>
+            <p>Telefone: (71) 9999-8888 | Email: contato@ctb.org.br</p>
+            <p>&copy; 2025 CTB - Todos os direitos reservados.</p>
+        </footer>
+
+    </div> </body>
+</html>
