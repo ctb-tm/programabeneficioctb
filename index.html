@@ -3,114 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Benefícios CTB</title>
+    <title>Programa de Benefícios e Cadastro CTB</title>
     
     <style>
-        /* Configuração inicial para remover margens padrão */
+        /* Configuração inicial */
         body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            scroll-behavior: smooth; /* Rolagem suave ao clicar no botão */
         }
 
         /* 1. Corpo da página externo (fundo azul 15%) */
         body {
-            background-color: #e8f0f8; /* Tom de Azul 15% (bem claro) */
-            padding: 20px; /* Dá espaço para vermos o fundo */
+            background-color: #e8f0f8; /* Tom de Azul 15% */
+            padding: 20px;
         }
 
         /* 2. Container principal (para centralizar o conteúdo) */
         .container {
-            max-width: 900px; /* Largura máxima do infográfico */
-            margin: 0 auto; /* Centraliza na página */
+            max-width: 900px;
+            margin: 0 auto;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 8px; /* Cantos arredondados */
-            overflow: hidden; /* Garante que o rodapé e cabeçalho fiquem nos cantos */
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         /* 3. Cabeçalho (com logomarca) */
         header {
-            /* O fundo do cabeçalho será o mesmo do box interno (Azul 5%) */
-            background-color: #f7f9fc; /* Tom de Azul 5% (quase branco) */
+            background-color: #f7f9fc; /* Tom de Azul 5% */
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #d9e6f2; /* Linha divisória leve (azul 15%) */
+            border-bottom: 1px solid #d9e6f2;
         }
 
         header img {
-            max-width: 180px; /* Tamanho da logomarca (ajuste se necessário) */
+            max-width: 180px;
             height: auto;
         }
 
         /* 4. Box interno (fundo azul 5%) */
         .content-box {
             background-color: #f7f9fc; /* Tom de Azul 5% */
-            padding: 25px 40px; /* Mais espaço nas laterais */
+            padding: 25px 40px;
         }
 
         /* 5. Título (azul 100%) */
         h1 {
-            color: #003366; /* Tom de Azul 100% (escuro) */
+            color: #003366; /* Tom de Azul 100% */
             text-align: center;
             border-bottom: 2px solid #003366;
             padding-bottom: 10px;
             margin-bottom: 25px;
         }
 
-        /* Estilo dos subtítulos (Objetivo, Público-Alvo, etc.) */
+        /* Estilo dos subtítulos */
         h2 {
-            color: #003366; /* Azul 100% */
+            color: #003366;
             margin-top: 30px;
-            border-left: 4px solid #003366; /* Detalhe visual */
+            border-left: 4px solid #003366;
             padding-left: 10px;
         }
 
         /* Estilos das listas */
-        ul, ol {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
 
         /* Estilos da Tabela (Apoio Financeiro) */
         table {
             width: 100%;
-            border-collapse: collapse; /* Remove bordas duplas */
+            border-collapse: collapse;
             margin-top: 15px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        
         th, td {
-            border: 1px solid #cddbe8; /* Borda no tom azul 15% */
+            border: 1px solid #cddbe8;
             padding: 12px;
             text-align: left;
         }
-        
-        /* Cabeçalho da tabela */
         th {
-            background-color: #e8f0f8; /* Fundo azul 15% */
-            color: #003366; /* Texto azul 100% */
+            background-color: #e8f0f8;
+            color: #003366;
         }
-        
-        /* Células da tabela */
-        td {
-            background-color: #ffffff; /* Fundo branco para leitura fácil */
+        td { background-color: #ffffff; }
+
+        /* --- ESTILOS DO BOTÃO DE CADASTRO --- */
+        .btn-container {
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 20px;
         }
+        .btn-cadastro {
+            display: inline-block;
+            background-color: #003366;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-cadastro:hover {
+            background-color: #004488;
+        }
+
+        /* --- ESTILOS DO FORMULÁRIO DE CADASTRO --- */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 51, 102, 0), rgba(0, 51, 102, 0.5), rgba(0, 51, 102, 0));
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #003366;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cddbe8;
+            border-radius: 5px;
+            box-sizing: border-box; 
+            font-size: 1em;
+        }
+        .btn-submit {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 12px 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #004488;
+        }
+
+        /* ================================================= */
+        /* ==     DOCUMENTAÇÃO (CSS DO RODAPÉ ATUALIZADO) == */
+        /* ================================================= */
 
         /* 6. Rodapé (fundo azul 100%, fontes branca) */
         footer {
             background-color: #003366; /* Tom de Azul 100% */
-            color: #ffffff; /* Fonte Branca */
-            padding: 25px;
-            text-align: center;
-            margin-top: 0; /* Gruda no box de conteúdo */
+            color: #ffffff;
+            padding: 25px 40px; /* Espaçamento interno */
+            margin-top: 0;
+            
+            /* --- NOVOS ESTILOS FLEXBOX --- */
+            display: flex; /* Ativa o Flexbox */
+            justify-content: space-between; /* Joga um item para cada lado */
+            align-items: center; /* Alinha os itens verticalmente */
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
         }
 
-        footer p {
-            margin: 5px 0; /* Espaçamento entre as linhas do rodapé */
+        /* Bloco de informações de texto (lado esquerdo) */
+        .footer-info {
+            text-align: left;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
             font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        /* Bloco da logomarca (lado direito) */
+        .footer-logo {
+            text-align: right;
+        }
+        
+        .footer-logo img {
+            max-width: 150px; /* Defina o tamanho da sua logo ctb1.png */
+            height: auto;
         }
 
     </style>
@@ -202,12 +277,54 @@
                     <li>Aumento da representatividade da Bahia em competições estaduais e nacionais.</li>
                 </ul>
             </section>
+            
+            <div class="btn-container">
+                <a href="#cadastro-form" class="btn-cadastro">Quero me Cadastrar no Programa!</a>
+            </div>
+
+
+            <hr class="section-divider">
+            
+            <section id="cadastro-form">
+                <h1 style="border: none; text-align: left; margin-bottom: 15px;">Formulário de Cadastro</h1>
+                <p style="margin-top: -15px; margin-bottom: 30px;">Preencha os dados abaixo para se candidatar ao programa.</p>
+
+                <form action="#" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome_completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" name="idade" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clube">Clube (se houver):</label>
+                        <input type="text" id="clube" name="clube">
+                    </div>
+
+                    <div class="btn-container" style="text-align: left;">
+                        <button type="submit" class="btn-submit">Enviar Cadastro</button>
+                    </div>
+                </form>
+            </section>
         
         </main> <footer>
-            <p><strong>Clube dos Tenistas da Bahia (CTB)</strong></p>
-            <p>Endereço: Rua Exemplo, 123 - Bairro Modelo, Salvador - BA</p>
-            <p>Telefone: (71) 9999-8888 | Email: contato@ctb.org.br</p>
-            <p>&copy; 2025 CTB - Todos os direitos reservados.</p>
+            <div class="footer-info">
+                <p><strong>Clube dos Tenistas da Bahia (CTB)</strong></p>
+                <p>Avenida Octavio mangabeira, 6929 - Sala 103 - Multishop - Salvador-BA</p>
+                <p>Telefone (71) 98530-4903 | email: paulo@ctb-ba.com.br</p>
+                <p>&copy; 2025 CTB - Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="ctb1.png" alt="Logo CTB Rodapé">
+            </div>
         </footer>
 
     </div> </body>
