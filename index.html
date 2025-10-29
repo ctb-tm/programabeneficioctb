@@ -4,7 +4,315 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa de Benefícios e Cadastro CTB</title>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Benefícios e Cadastro CTB</title>
     
+    <style>
+        /* Configuração inicial */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        body { background-color: #e8f0f8; padding: 20px; }
+        .container {
+            max-width: 900px; margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; overflow: hidden;
+        }
+        header {
+            background-color: #f7f9fc; padding: 20px;
+            text-align: center; border-bottom: 1px solid #d9e6f2;
+        }
+        header img { max-width: 180px; height: auto; }
+        .content-box { background-color: #f7f9fc; padding: 25px 40px; }
+        h1 {
+            color: #003366; text-align: center;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px; margin-bottom: 25px;
+        }
+        h2 {
+            color: #003366; margin-top: 30px;
+            border-left: 4px solid #003366; padding-left: 10px;
+        }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        table {
+            width: 100%; border-collapse: collapse;
+            margin-top: 15px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        th, td { border: 1px solid #cddbe8; padding: 12px; text-align: left; }
+        th { background-color: #e8f0f8; color: #003366; }
+        td { background-color: #ffffff; }
+        .btn-container {
+            text-align: center; margin-top: 35px; margin-bottom: 20px;
+        }
+        .btn-cadastro {
+            display: inline-block; background-color: #003366;
+            color: #ffffff; padding: 12px 25px;
+            text-decoration: none; font-weight: bold;
+            font-size: 1.1em; border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-cadastro:hover { background-color: #004488; }
+        .section-divider {
+            border: 0; height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 51, 102, 0), rgba(0, 51, 102, 0.5), rgba(0, 51, 102, 0));
+            margin-top: 40px; margin-bottom: 10px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block; margin-bottom: 5px;
+            color: #003366; font-weight: bold;
+        }
+        .form-group input {
+            width: 100%; padding: 10px;
+            border: 1px solid #cddbe8; border-radius: 5px;
+            box-sizing: border-box; font-size: 1em;
+        }
+        .btn-submit {
+            background-color: #003366; color: #ffffff;
+            padding: 12px 25px; font-weight: bold;
+            font-size: 1.1em; border-radius: 5px;
+            border: none; cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover { background-color: #004488; }
+        
+        .btn-submit:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+        
+        #confirmation-message {
+            display: none;
+            background-color: #e6f7ec;
+            color: #004d1a;
+            border: 1px solid #b7e1c7;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #confirmation-message h3 {
+            margin-top: 0;
+            color: #004d1a;
+        }
+        
+        #form-feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+            color: #D8000C;
+            background-color: #FFD2D2;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #D8000C;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #003366; color: #ffffff;
+            padding: 25px 40px; display: flex;
+            justify-content: space-between; align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer-info { text-align: left; }
+        .footer-info p {
+            margin: 5px 0; font-size: 0.9em; line-height: 1.4;
+        }
+        .footer-logo { text-align: right; }
+        .footer-logo img { max-width: 150px; height: auto; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="ctb.png" alt="Logomarca CTB - Clube dos Tenistas da Bahia">
+        </header>
+
+        <main class="content-box">
+            <h1>PROGRAMA DE BENEFÍCIOS DO ALUNO CTB</h1>
+            <section>
+                <h2>1. Objetivo</h2>
+                <p>Reconhecer o desempenho, assiduidade e o comprometimento dos alunos participantes dos projetos esportivos do Clube dos Tenistas da Bahia, incentivando a permanência e o desenvolvimento técnico dos atletas em formação.</p>
+            </section>
+            <section>
+                <h2>2. Público-Alvo</h2>
+                <p>Atletas e alunos de escolas públicas com nível técnico avançado, regularmente inscritos nos projetos sociais e esportivos vinculados ao CTB, em especial os participantes do Projeto Bahia com Tênis de Mesa e demais programas de iniciação.</p>
+            </section>
+            <section>
+                <h2>3. Itens do Programa</h2>
+                <p>O programa prevê a entrega de um Kit Benefício CTB e o Apoio Financeiro para Participação em Eventos.</p>
+                <h3>A) Kit Benefício CTB</h3>
+                <ul>
+                    <li>2 Camisas Oficiais de Treinamento CTB (uniforme padrão de identificação do clube e dos parceiros);</li>
+                    <li>Certificado de Atleta do Programa;</li>
+                    <li>Acesso prioritário a clínicas técnicas e eventos internos gratuitamente.</li>
+                </ul>
+                <h3>B) Apoio Financeiro para Participação em EventOS</h3>
+                <p>O apoio tem como finalidade custear parcialmente despesas de transporte, alimentação e inscrição de atletas em competições oficiais estadual e nacional).</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Evento</th>
+                            <th>Valor de Apoio por Atleta</th>
+                            <th>Critério de Concessão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estadual</td>
+                            <td>R$ 150,00</td>
+                            <td>Participação confirmada e frequência mínima de 75% nos treinos.</td>
+                        </tr>
+                        <tr>
+                            <td>Nacional</td>
+                            <td>R$ 250,00</td>
+                            <td>Classificação prévia e desempenho técnico destacado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2>4. Critérios de Elegibilidade</h2>
+                <ul>
+                    <li>Estar matriculado e ativo no projeto esportivo CTB;</li>
+                    <li>Manter frequência mínima de 75% nas aulas e treinos;</li>
+                    <li>Demonstrar disciplina e comportamento esportivo exemplar;</li>
+                    <li>Participar das ações sociais e educativas vinculadas ao projeto;</li>
+                    <li>Ser indicado pelo professor responsável e validado pela coordenação técnica.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>5. Gestão e Prestação de Contas</h2>
+                <p>Os apoios serão geridos pela coordenação do projeto, com registro nominal dos beneficiários e comprovação documental (listas de presença, fotos, recibos e relatórios técnicos).</p>
+                <p>A prestação de contas seguirá o modelo padrão com emissão de recibo assinado.</p>
+            </section>
+            <section>
+                <h2>6. Impacto Esperado</h2>
+                <ul>
+                    <li>Redução da evasão esportiva e escolar;</li>
+                    <li>Estímulo à meritocracia e ao bom desempenho;</li>
+                    <li>Formação de atletas cidadãos com valores éticos e sociais;</li>
+                    <li>Aumento da representatividade da Bahia em competições estaduais e nacionais.</li>
+                </ul>
+            </section>
+
+            <div class="btn-container">
+                <a href="#form-section" class="btn-cadastro">Quero me Cadastrar no Programa!</a>
+            </div>
+
+            <hr class="section-divider">
+            
+            <section id="form-section">
+                <div id="form-wrapper">
+                    <h1 style="border: none; text-align: left; margin-bottom: 15px;">Formulário de Cadastro</h1>
+                    <p style="margin-top: -15px; margin-bottom: 30px;">Preencha os dados abaixo para se candidatar ao programa.</p>
+
+                    <form id="cadastro-google">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" name="Nome Completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cpf">CPF:</label>
+                            <input type="text" id="cpf" name="CPF" placeholder="000.000.000-00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="idade">Idade:</label>
+                            <input type="number" id="idade" name="Idade" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clube">Clube (se houver):</label>
+                            <input type="text" id="clube" name="Clube">
+                        </div>
+                        <div class="btn-container" style="text-align: left;">
+                            <button type="submit" id="btn-submit-google" class="btn-submit">Enviar Cadastro</button>
+                        </div>
+                    </form>
+                </div> <div id="confirmation-message">
+                    <h3>Cadastro Realizado com Sucesso!</h3>
+                    <p>Obrigado por se inscrever no Programa de Benefícios do CTB. Seus dados foram enviados para análise.</p>
+                </div>
+
+                <div id="form-feedback"></div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p><strong>Clube dos Tenistas da Bahia (CTB)</strong></p>
+                <p>Avenida Octavio mangabeira, 6929 - Sala 103 - Multishop - Salvador-BA</p>
+                <p>Telefone (71) 98530-4903 | email: paulo@ctb-ba.com.br</p>
+                <p>&copy; 2025 CTB - Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-logo">
+                <img src="ctb1.png" alt="Logo CTB Rodapé">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 1. Defina o URL do seu App Script (Colado da Parte 1)
+        //    O URL é composto pelo prefixo do Google + seu código de implantação + /exec
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDAUXBRXm8xGe9DMxR64Zexhf9WxeLOjnIyrVnpBZ49F90-5TbKt8NwfM5MCqeiU2EWA/exec';
+
+        // 2. Pegue os elementos da página
+        const form = document.getElementById('cadastro-google');
+        const submitButton = document.getElementById('btn-submit-google');
+        const formWrapper = document.getElementById('form-wrapper');
+        const confirmationMessage = document.getElementById('confirmation-message');
+        const formFeedback = document.getElementById('form-feedback'); // Para erros
+
+        // 3. Adicione o "ouvinte" ao envio do formulário
+        form.addEventListener('submit', function(e) {
+            
+            e.preventDefault(); // Impede o envio padrão
+            
+            // 3.1. Desativa o botão e mostra "Enviando..."
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            formFeedback.style.display = 'none'; // Esconde msg de erro antiga
+            confirmationMessage.style.display = 'none'; // Esconde msg de sucesso antiga
+
+            // 3.2. Envia os dados
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 4. LIDA COM SUCESSO
+                if (data.result === 'success') {
+                    formWrapper.style.display = 'none'; // Esconde o formulário
+                    confirmationMessage.style.display = 'block'; // Mostra o sucesso!
+                } else {
+                    // 5. LIDA COM ERRO (vindo do Google)
+                    throw new Error(data.message || 'Ocorreu um erro desconhecido.');
+                }
+            })
+            .catch(error => {
+                // 6. LIDA COM ERRO (de rede ou falha)
+                formFeedback.textContent = 'Erro ao enviar cadastro: ' + error.message;
+                formFeedback.style.display = 'block'; // Mostra a caixa de erro
+                
+                // Reativa o botão se deu erro, para o usuário tentar de novo
+                submitButton.disabled = false;
+                submitButton.textContent = 'Enviar Cadastro';
+            });
+        });
+    </script>
+
+</body>
+</html>
     <style>
         /* Configuração inicial */
         body, html {
